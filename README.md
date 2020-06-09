@@ -93,7 +93,7 @@ for item in data['data']:
 
 
 
-## Web scraping (It seems does not work out) run with python 3.8 full
+## Web scraping (It seems does not work out) functions run with python 3.8 full
 
 from selenium import webdriver
 from BeautifulSoup import BeautifulSoup
