@@ -72,7 +72,28 @@ fig= plt.figure(figsize=(20,10))
 plt.plot(date, waterLevel)
 plt.show()
 
-## Extra Credit:
+## Extra Credit: I would like to point out that I used python 2.7 for this exercsie and I got the data from 06-08-20 to 06-09-20
+
+import urllib2
+import json
+
+urllib2.urlopen('https://tidesandcurrents.noaa.gov//api/datagetter?product=water_level&application=NOS.COOPS.TAC.WL&begin_date=20200608&end_date=20200609&datum=MLLW&station=8729108&time_zone=GMT&units=english&format=json')
+
+print json.load(urllib2.urlopen('https://tidesandcurrents.noaa.gov//api/datagetter?product=water_level&application=NOS.COOPS.TAC.WL&begin_date=20200608&end_date=20200609&datum=MLLW&station=8729108&time_zone=GMT&units=english&format=json'))
+
+url = 'https://tidesandcurrents.noaa.gov//api/datagetter?product=water_level&application=NOS.COOPS.TAC.WL&begin_date=20200608&end_date=20200609&datum=MLLW&station=8729108&time_zone=GMT&units=english&format=json'
+json_obj = urllib2.urlopen(url)
+data = json.load(json_obj)
+for item in data['data']:
+    print item ['t']
+    print item ['v']
+    print item ['s']
+    print item ['f']
+    print item ['q']
+
+
+
+## Web scraping (It seems does not work out) run with python 3.8 full
 
 from selenium import webdriver
 from BeautifulSoup import BeautifulSoup
