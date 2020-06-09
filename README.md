@@ -72,7 +72,7 @@ fig= plt.figure(figsize=(20,10))
 plt.plot(date, waterLevel)
 plt.show()
 
-## Extra Credit: I would like to point out that I used python 2.7 for this exercsie and I got the data from 06-08-20 to 06-09-20
+## Extra Credits: I would like to point out that I used python 2.7 for this exercsie and I got the data from 06-08-20 to 06-09-20.
 
 import urllib2
 import json
