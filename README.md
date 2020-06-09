@@ -72,7 +72,7 @@ fig= plt.figure(figsize=(20,10))
 plt.plot(date, waterLevel)
 plt.show()
 
-## Extra Credit (4 pts):
+## Extra Credit:
 
 from selenium import webdriver
 from BeautifulSoup import BeautifulSoup
