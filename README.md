@@ -1,4 +1,4 @@
-# Problem-set3
+# Problem-Set3
 
 This repo contains the scripts to get the data and graph
 
@@ -72,27 +72,30 @@ fig= plt.figure(figsize=(20,10))
 plt.plot(date, waterLevel)
 plt.show()
 
-Extra Credit (4 pts):
+## Extra Credit (4 pts):
 
 from selenium import webdriver
 from BeautifulSoup import BeautifulSoup
 import pandas as pd
+
 driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
-products=[]
+
 Date=[]
-Time (GMT)=[]
-Predicted (ft)=[]
-Preliminary (ft)=[]
-Verified (ft)=[]
+Time=[]
+Predicted=[]
+Preliminary=[]
+Verified=[]
 driver.get("<a href="https://tidesandcurrents.noaa.gov/waterlevels.">https://tidesandcurrents.noaa.gov/waterlevels.html?id=8729108&units=standard&bdate=20200603&edate=20200603&timezone=GMT&datum=MLLW&interval=6&action=data")
 content = driver.page_source
 soup = BeautifulSoup(content)
 for a in soup.findAll('div',href=True, attrs={'class':'span12'}):
 data=a.find('div', attrs={'div':'data_listing'})
 Date.append(Date.text)
-Time (GMT).append(Time (GMT).text)
-Predicted (ft).append(Predicted (ft).text) 
-
+Time.append(Time.text)
+Predicted.append(Predicted.text)
+Preliminary.append(Preliminary.text)
+Verified.append(Verified.text)
+    
 python web-s.gyp
-df = pd.DataFrame({'Data':datas,'Time':times,'Predicted':predictings}) 
-df.to_csv('DataWh.csv', index=False, encoding='utf-8')
+df = pd.DataFrame({'Data':datas,'Time':times,'Predicted':predictings, 'Preliminary':Preliminaries, 'Verified':Verifies}) 
+df.to_csv('Data.csv', index=False, encoding='utf-8')
